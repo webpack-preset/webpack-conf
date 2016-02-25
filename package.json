@@ -6,10 +6,29 @@
   "license": "MIT",
   "homepage": "https://github.com/webpack-preset/webpack-conf#readme",
   "repository": "webpack-preset/webpack-conf",
-  "main": "src/index.js",
+  "main": "lib/index.js",
+  "files": [
+    "README.md",
+    "src/*",
+    "lib/*"
+  ],
+  "scripts": {
+    "build": "rimraf lib && babel src -d lib",
+    "test": "npm run lint && npm run ava",
+    "lint": "eslint src",
+    "ava": "ava -v test/**/*.spec.js"
+  },
   "devDependencies": {
+    "ava": "^0.12.0",
+    "babel-cli": "^6.5.1",
     "babel-eslint": "^5.0.0",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-register": "^6.5.2",
     "eslint": "^2.2.0",
-    "eslint-config-rackt": "^1.1.1"
+    "eslint-config-rackt": "^1.1.1",
+    "rimraf": "^2.5.2"
+  },
+  "ava": {
+    "require": [ "babel-register" ]
   }
 }
