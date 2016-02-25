@@ -16,7 +16,8 @@
     "build": "rimraf lib && babel src -d lib",
     "test": "npm run lint && npm run ava",
     "lint": "eslint src",
-    "ava": "ava -v test/**/*.spec.js"
+    "ava": "ava -v test/**/*.spec.js",
+    "watch": "ava -w -v test/**/*.spec.js"
   },
   "devDependencies": {
     "ava": "^0.12.0",
