@@ -1,0 +1,10 @@
+{
+  "name": "webpack-conf",
+  "version": "0.0.1",
+  "description": "Programmatically manage your webpack configuration.",
+  "author": "Tim Dorr <timdorr@timdorr.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/webpack-preset/webpack-conf#readme",
+  "repository": "webpack-preset/webpack-conf",
+  "main": "src/index.js"
+}
