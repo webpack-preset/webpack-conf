@@ -48,19 +48,23 @@ class WebpackConf {
 
   // Output
 
+  setOutput(output) {
+    this.output = output
+  }
+
+  // loaders
+
+  // Plugins
 
   // Export
 
   toConfig() {
     return {
-      entry: this.entry
+      entry: this.entry,
+      output: this.output,
+      module: { loaders: this.loaders },
+      plugins: this.plugins
     }
-  }
-
-  toJSON() {
-    return JSON.stringify({
-      entry: this.entry
-    })
   }
 }
 
