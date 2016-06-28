@@ -1,6 +1,6 @@
 {
   "name": "webpack-conf",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Programmatically manage your webpack configuration.",
   "author": "Tim Dorr <timdorr@timdorr.com>",
   "license": "MIT",
