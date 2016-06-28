@@ -80,4 +80,4 @@ class WebpackConf {
   }
 }
 
-export default WebpackConf
+module.exports = WebpackConf

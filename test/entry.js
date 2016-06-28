@@ -1,5 +1,5 @@
-import test from 'ava'
-import WebpackConf from '../src/index'
+const test = require('ava')
+const WebpackConf = require('../src/index')
 
 test('resets the entry point', t => {
   const webpack = new WebpackConf()

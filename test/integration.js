@@ -1,7 +1,7 @@
-import test from 'ava'
-import webpack from 'webpack'
-import MemoryFS from 'memory-fs'
-import WebpackConf from '../src/index'
+const test = require('ava')
+const webpack = require('webpack')
+const MemoryFS = require('memory-fs')
+const WebpackConf = require('../src/index')
 
 test.cb('it compiles a basic build', t => {
   const fs = new MemoryFS()
