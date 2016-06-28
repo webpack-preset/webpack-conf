@@ -16,8 +16,8 @@
     "build": "rimraf lib && babel src -d lib",
     "test": "npm run lint && npm run ava",
     "lint": "eslint src",
-    "ava": "ava -v",
-    "watch": "ava -w -v"
+    "ava": "ava -v test/*.js",
+    "watch": "ava -w -v test/*.js"
   },
   "devDependencies": {
     "ava": "^0.15.2",
@@ -29,7 +29,9 @@
     "eslint": "^2.2.0",
     "eslint-plugin-import": "^1.9.2",
     "eslint-plugin-react": "^5.2.2",
-    "rimraf": "^2.5.2"
+    "memory-fs": "^0.3.0",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.13.1"
   },
   "ava": {
     "require": [
