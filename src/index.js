@@ -52,6 +52,18 @@ class WebpackConf {
     this.output = output
   }
 
+  setOutputPath(path) {
+    this.output.path = path
+  }
+
+  setOutputFilename(filename) {
+    this.output.filename = filename
+  }
+
+  setOutputPublicPath(publicPath) {
+    this.output.publicPath = publicPath
+  }
+
   // loaders
 
   // Plugins
