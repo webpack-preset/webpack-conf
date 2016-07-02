@@ -9,29 +9,12 @@ test('resets the output', t => {
   t.deepEqual(conf.output, { path: '/dev/null', filename: 'test.js' })
 })
 
-test('sets an output path', t => {
+test('merges our own output', t => {
   const webpack = new WebpackConf()
-  webpack.setOutputPath('test')
+  webpack.mergeOutput({ path: 'test' })
   const conf = webpack.toConfig()
 
   t.truthy(conf.output.path)
   t.is(conf.output.path, 'test')
-})
-
-test('sets an output filename', t => {
-  const webpack = new WebpackConf()
-  webpack.setOutputFilename('test.js')
-  const conf = webpack.toConfig()
-
-  t.truthy(conf.output.filename)
-  t.is(conf.output.filename, 'test.js')
-})
-
-test('sets an output public path', t => {
-  const webpack = new WebpackConf()
-  webpack.setOutputPublicPath('/test/')
-  const conf = webpack.toConfig()
-
-  t.truthy(conf.output.publicPath)
-  t.is(conf.output.publicPath, '/test/')
+  t.is(conf.output.filename, 'bundle.js')
 })

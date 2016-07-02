@@ -24,10 +24,17 @@ class WebpackConf {
     // reset the config to the defaults before loading
     this._setDefault()
 
-    this.entry = config.entry || this.entry
-    this.output = config.output || this.output
-    this.loaders = config.module && config.module.loaders || this.loaders
-    this.plugins = config.plugins || this.plugins
+    if ((typeof config.entry === 'object' && config.entry !== null) || typeof config.entry === 'string')
+      this.entry = config.entry
+
+    if (typeof config.output === 'object' && config.output !== null)
+      this.output = config.output
+
+    if (config.module && Array.isArray(config.module.loaders))
+      this.loaders = config.module.loaders
+
+    if (Array.isArray(config.plugins))
+      this.plugins = config.plugins
   }
 
   // Entry
@@ -52,16 +59,8 @@ class WebpackConf {
     this.output = output
   }
 
-  setOutputPath(path) {
-    this.output.path = path
-  }
-
-  setOutputFilename(filename) {
-    this.output.filename = filename
-  }
-
-  setOutputPublicPath(publicPath) {
-    this.output.publicPath = publicPath
+  mergeOutput(output) {
+    Object.assign(this.output, output)
   }
 
   // loaders

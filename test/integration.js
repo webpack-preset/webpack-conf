@@ -8,8 +8,7 @@ test.cb('it compiles a basic build', t => {
 
   const conf = new WebpackConf()
   conf.setEntry('./fixtures/entry1.js')
-  conf.setOutputPath('/')
-  conf.setOutputFilename('bundle.js')
+  conf.setOutput({ path: '/', filename: 'test.js' })
 
   const compiler = webpack(conf.toConfig())
   compiler.outputFileSystem = fs
