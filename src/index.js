@@ -17,6 +17,7 @@ class WebpackConf {
       filename: 'bundle.js'
     }
     this.loaders = []
+    this.namedLoaders = {}
     this.plugins = []
   }
 
@@ -65,15 +66,23 @@ class WebpackConf {
 
   // loaders
 
+  setLoader(name, config) {
+    this.namedLoaders[name] = Object.assign({}, this.namedLoaders[name], config)
+  }
+
+  get _namedLoadersArray() {
+    return Object.keys(this.namedLoaders).map(key => this.namedLoaders[key])
+  }
+
   // Plugins
 
   // Export
 
-  toConfig() {
+  get config() {
     return {
       entry: this.entry,
       output: this.output,
-      module: { loaders: this.loaders },
+      module: { loaders: [ ...this.loaders, ...this._namedLoadersArray ] },
       plugins: this.plugins
     }
   }

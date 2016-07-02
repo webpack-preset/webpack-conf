@@ -10,7 +10,7 @@ test.cb('it compiles a basic build', t => {
   conf.setEntry('./fixtures/entry1.js')
   conf.setOutput({ path: '/', filename: 'test.js' })
 
-  const compiler = webpack(conf.toConfig())
+  const compiler = webpack(conf.config)
   compiler.outputFileSystem = fs
 
   compiler.run((err, stats) => {

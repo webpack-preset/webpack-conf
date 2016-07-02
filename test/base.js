@@ -9,7 +9,7 @@ test('it exports a class', t => {
 
 test('it has a default config', t => {
   const webpack = new WebpackConf()
-  const conf = webpack.toConfig()
+  const conf = webpack.config
 
   t.is(typeof conf, 'object')
   t.is(typeof conf.entry, 'object')
@@ -33,7 +33,7 @@ test('it loads an existing config', t => {
     plugins: []
   })
 
-  const conf = webpack.toConfig()
+  const conf = webpack.config
 
   t.is(typeof conf, 'object')
   t.is(typeof conf.entry, 'string')
@@ -57,7 +57,7 @@ test('it blocks loading an invalid config', t => {
     plugins: 'DedupePlugin'
   })
 
-  const conf = webpack.toConfig()
+  const conf = webpack.config
 
   t.is(typeof conf, 'object')
   t.is(typeof conf.entry, 'object')

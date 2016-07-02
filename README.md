@@ -29,5 +29,5 @@ conf.setEntry(path.resolve('./src/entry.js'))
 conf.setOutputPath(path.resolve(__dirname, 'build'))
 conf.setOutputFilename('bundle.js')
 
-const compiler = webpack(conf.toConfig())
+const compiler = webpack(conf.config)
 ```
